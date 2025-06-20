@@ -3,31 +3,17 @@ name: Deploy Preswald App
 on:
   push:
     branches:
-      - main
+      - main  # or whichever branch you're using
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: pip install preswald pandas plotly
-
-      - name: Build static site
-        run: preswald export
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./preswald  # or ./dist, whichever contains your index.html
