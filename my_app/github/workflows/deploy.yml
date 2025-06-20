@@ -3,25 +3,25 @@ name: Deploy Preswald App
 on:
   push:
     branches:
-      - main  # Run on every push to main
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Allow pushing updates
+      contents: write
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'  # Or whichever version you're using
+          python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install preswald plotly pandas
+        run: pip install preswald pandas plotly
 
       - name: Build static site
         run: preswald export
