@@ -3,7 +3,7 @@ title = "Preswald Project"
 version = "0.1.0"
 port = "8501"
 slug = "my-app-119550"
-entrypoint = "app.py"
+entrypoint = "hello.py"
 
 [branding]
 name = "Air Quality & Health Insights"            
@@ -14,7 +14,7 @@ primaryColor = "#FF2400"
 
 [data.sample_csv]
 type = "csv"
-path = "data/sample.csv"
+path = "sample.csv"
 
 [logging]
 level = "INFO"
