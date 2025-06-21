@@ -4,3 +4,6 @@ streamlit
 preswald
 markdown
 sqlalchemy
+networkx
+numpy
+jinja2
