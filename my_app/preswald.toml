@@ -3,7 +3,7 @@ title = "Preswald Project"
 version = "0.1.0"
 port = "8501"
 slug = "my-app-119550"
-entrypoint = "hello.py"
+entrypoint = "app.py"
 
 [branding]
 name = "Air Quality & Health Insights"            
