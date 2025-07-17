@@ -40,6 +40,7 @@ def air_quality_dashboard():
     df_sampled = df.iloc[::50]
     fig_admissions = px.scatter(df_sampled, x="aqi", y="hospital_admissions", color="city", title="Admissions vs AQI")
 
+    
     # Render UI
     preswald.sidebar("Navigation", items=["Overview", "Trends", "Pollutants", "Health Impact"])
     preswald.text("# Air Quality & Health Dashboard")
